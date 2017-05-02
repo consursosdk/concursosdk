@@ -1,0 +1,184 @@
+@import url("http://hello.myfonts.net/count/334391");
+
+
+@font-face {font-family: 'Radikal-Black';src: url('webfonts/334391_0_0.eot');src: url('webfonts/334391_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/334391_0_0.woff2') format('woff2'),url('webfonts/334391_0_0.woff') format('woff'),url('webfonts/334391_0_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'Radikal-Bold';src: url('webfonts/334391_1_0.eot');src: url('webfonts/334391_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/334391_1_0.woff2') format('woff2'),url('webfonts/334391_1_0.woff') format('woff'),url('webfonts/334391_1_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'Radikal-Light';src: url('webfonts/334391_2_0.eot');src: url('webfonts/334391_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/334391_2_0.woff2') format('woff2'),url('webfonts/334391_2_0.woff') format('woff'),url('webfonts/334391_2_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'Radikal-Medium';src: url('webfonts/334391_3_0.eot');src: url('webfonts/334391_3_0.eot?#iefix') format('embedded-opentype'),url('webfonts/334391_3_0.woff2') format('woff2'),url('webfonts/334391_3_0.woff') format('woff'),url('webfonts/334391_3_0.ttf') format('truetype');}
+
+
+html {
+  font-family: 'Radikal-Light'; /* 1 */
+  line-height: 1.15; /* 2 */
+  -ms-text-size-adjust: 100%; /* 3 */
+  -webkit-text-size-adjust: 100%; /* 3 */
+}
+
+.banner {
+	width: calc(50% - 100px);
+}
+
+.text-center {
+	text-align: center;
+}
+
+h1 {
+	font-size: 4em;
+	font-family: "Radikal-Bold";
+	color: #EA3434;
+}
+
+.boton {
+	background: #323664;
+	color: #FFF;
+	padding: 20px 18px;
+	font-size: 2em;
+	border: none;
+	cursor: pointer;
+}
+
+.boton:hover {
+	background: #44497a;
+}
+
+.boton:disabled {
+	background: #ebebeb;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(255, 255, 255, 0.5);
+	display: flex;
+	justify-content: align-items;
+	align-items: center;
+	flex-direction: column;
+}
+
+.question {
+	display: none;
+}
+
+.answer {
+	width: 50%;
+	border: 1px solid #ccc;
+	font-size: 3em;
+	text-align: center;
+}
+
+#winner-animation {
+	display: none;
+}
+
+
+.rollbox {
+	margin-top:50px;
+	height:200px;
+	width: 100%;
+	display: block;
+	background:#000;
+	border:1px solid #616161;
+	overflow-x:auto;
+	overflow:hidden;
+	position:relative;
+	padding:0;
+}
+.rollbox > table{
+	width:auto;
+	height:200px;
+	margin:0;
+	padding:0;
+	
+}
+#loadout{
+	position:absolute;
+	top:10px;
+	left:5px;
+	z-index:1;
+	background:#121619;
+}
+
+.roller {
+	position:relative;
+	display: block;
+	height:100%;
+	text-align:center;
+	color:white;
+	line-height:180px;
+	font-size:0.8em;
+	font-weight:bold;
+	font-family:sans-serif;
+}
+.roller div{
+	display:block;
+	height:50px;
+	line-height:50px;
+	position:absolute;
+	bottom:0;
+	width:100%;
+	left:0;
+	
+}
+.inputbox{
+	background:#212121;
+	box-shadow:inset 0 0 7px 0 black;
+	font-size:1.1em;
+	font-weight:bold;
+	color:white;
+}
+.badge{
+	padding-top:5px;
+	text-shadow:1px 1px 1px black;
+	margin-bottom:20px;
+}
+.line{
+	width:2px;
+	height:198px;
+	top:1px;
+	left:50%;
+	position:absolute;
+	background:#FFCE0A;
+	opacity:0.6;
+	z-index:2;
+	
+}
+#log{
+	margin-top:30px;
+	text-align:center;
+	font-size:1.5em;
+	color:white;
+	
+}
+#log span{
+	font-size:2em;
+	font-weight:bold;
+	color:#57B3F9;
+}
+#roll{
+	margin-top:30px;
+}
+.roller{
+	height:180px;
+	width:180px;
+	margin-right:10px;
+	box-shadow:0 0 5px 0 black;
+	background: #323664;
+}
+tr,table,td{
+	margin:0;
+	padding:0;
+}
+
+td:nth-child(even) .roller{
+	background: #7B2E4D;
+}
+
