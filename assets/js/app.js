@@ -25,15 +25,16 @@ $(document).ready(function(){
 
 	$('#get-question').on('click', function() {
 		$('#question').slideDown();
-		$('#question h2').text(questions[0].question);
-		answer = questions[0].answer;
+    const selectedQuestion = questions[Math.floor(Math.random() * questions.length)];
+		$('#question h2').text(selectedQuestion.question);
+		answer = selectedQuestion.answer;
 		$(this).slideUp();
 	});
 
 	$('form').on('submit', function(ev) {
 		ev.preventDefault();
 		var userAnswer = $('#answer').val();
-		if (userAnswer.toLowercase() == answer) {
+		if (userAnswer.toLowerCase() == answer) {
 			$('.overlay').css({
 				display: 'block'
 			});
@@ -52,10 +53,9 @@ $(document).ready(function(){
 		];
 
 		$("#roll").attr("disabled",true);
-		var scrollsize = 0,
+		let scrollsize = 0,
 		diff = 0;
 		$(loadout).html("");
-		$("#log").html("");
 		loadout.css("left","100%");
 		if(users.length < 10){
 			insert_times = 20;
@@ -64,35 +64,31 @@ $(document).ready(function(){
 			insert_times = 10;
 			duration_time = 10000;
 		}
-		for(var times = 0; times < insert_times; times++){
-			shuffled = users;
-			shuffled.shuffle();
-			for(var i = 0;i < users.length;i++){
-				loadout.append('<td><div class="roller"><div>'+shuffled[i]+'</div></div></td>');
-				scrollsize = scrollsize + 192;
-			}
+		for(let times = 0; times < insert_times; times++){
+			users.shuffle();
+      users.forEach(shuffled => {
+        loadout.append('<td><div class="roller"><div>'+shuffled+'</div></div></td>');
+				scrollsize += 192;
+      });
 		}
-		
-		
+
+
 		diff = Math.round(scrollsize /2);
 		diff = randomEx(diff - 300, diff + 300);
 		$( "#loadout" ).animate({
 			left: "-="+diff
 		},  duration_time, function() {
-			// $("#roll").attr("disabled",false);
 			$('#loadout').children('td').each(function () {
 				var center = window.innerWidth / 2;
 				if($(this).offset().left < center && $(this).offset().left + 185 > center){
-					var text = $(this).children().text();
+					const text = $(this).children().text();
 					if (text == "Ganador") {
 						$('#winner-animation').show();
 						$('#roll').hide();
 						$('.rollbox').hide();
 					}
-					$("#log").append("THE WINNER IS<br/> <span class=\"badge\">"+text+"</span>");
-					
 				}
-				
+
 			});
 		});
 	});
