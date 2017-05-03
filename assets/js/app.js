@@ -25,7 +25,7 @@ $(document).ready(function(){
 		}
 	];
 
-	$('#get-question').on('click', function() {
+	$('#get-question').on('tap', function() {
     $('#question').removeClass('hide').addClass('show');
     const selectedQuestion = questions[Math.floor(Math.random() * questions.length)];
 		$('#question h2').text(selectedQuestion.question);
