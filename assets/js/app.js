@@ -1,5 +1,7 @@
 $(document).ready(function(){
 	let answer = '';
+  const tada = new Audio('/assets/sounds/tada.wav');
+  const wrong = new Audio('/assets/sounds/wrong.wav');
 	let questions = [
 		{
 			question: 'Dinos el nombre de un speaker',
@@ -38,7 +40,9 @@ $(document).ready(function(){
 			$('.overlay').css({
 				display: 'block'
 			});
-		}
+		} else {
+      wrong.play();
+    }
 	});
 
 	let users = [
@@ -85,6 +89,7 @@ $(document).ready(function(){
 				if($(this).offset().left < center && $(this).offset().left + 185 > center){
 					const text = $(this).children().text();
 					if (text == "Ganador") {
+            tada.play();
 						$('#winner-animation').show();
 						$('#roll').hide();
 						$('.rollbox').hide();
@@ -95,7 +100,7 @@ $(document).ready(function(){
 		});
 	});
 
-  $('#refresh').on('click', function() {
+  $('.refresh-icon').on('click', function() {
     $('.overlay').css({
       display: 'none'
     });
