@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	let answer = '';
-  const tada = new Audio('/assets/sounds/tada.wav');
-  const wrong = new Audio('/assets/sounds/wrong.wav');
+  const tada = new Audio('assets/sounds/tada.wav');
+  const wrong = new Audio('assets/sounds/wrong.wav');
 	let questions = [
 		{
 			question: 'Dinos el nombre de un speaker',
@@ -36,19 +36,22 @@ $(document).ready(function(){
 	$('form').on('submit', function(ev) {
 		ev.preventDefault();
 		const userAnswer = $('#answer').val().toLowerCase();
-		if (answer.includes(userAnswer)) {
-			$('.overlay').css({
-				display: 'block'
-			});
-		} else {
+    if(userAnswer.length > 2 && answer.includes(userAnswer)) {
+      $('.overlay').css({
+        display: 'block'
+      });
+    } else {
       wrong.play();
     }
+
 	});
 
 	let users = [
     "Perdedor <i class='fa fa-frown-o'></i>",
     "Perdiste <i class='fa fa-frown-o'></i>",
     "Nop <i class='fa fa-frown-o'></i>",
+    "Casi <i class='fa fa-frown-o'></i>",
+    "No ganaste <i class='fa fa-frown-o'></i>",
     "Casi <i class='fa fa-frown-o'></i>",
     "Ganador"
 	];
@@ -93,7 +96,9 @@ $(document).ready(function(){
 						$('#winner-animation').show();
 						$('#roll').hide();
 						$('.rollbox').hide();
-					}
+					} else {
+            wrong.play();
+          }
 				}
 
 			});
