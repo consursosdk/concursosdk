@@ -25,7 +25,7 @@ $(document).ready(function(){
 		}
 	];
 
-	$('#get-question').on('tap', function() {
+	$('#get-question').on('tap click', function() {
     $('#question').removeClass('hide').addClass('show');
     const selectedQuestion = questions[Math.floor(Math.random() * questions.length)];
 		$('#question h2').text(selectedQuestion.question);
@@ -59,7 +59,7 @@ $(document).ready(function(){
 	loadout = $("#loadout"),
 	insert_times = 30,
 	duration_time = 10000;
-	$("#roll").click(function(){
+	$("#roll").on('click tap', function(){
 
 		$("#roll").attr("disabled",true);
 		let scrollsize = 0,
@@ -105,7 +105,7 @@ $(document).ready(function(){
 		});
 	});
 
-  $('.refresh-icon').on('click', function() {
+  $('.refresh-icon').on('click tap', function() {
     $('.overlay').css({
       display: 'none'
     });
