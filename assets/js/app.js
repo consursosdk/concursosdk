@@ -95,6 +95,15 @@ $(document).ready(function(){
 		});
 	});
 
+  $('#refresh').on('click', function() {
+    $('.overlay').css({
+      display: 'none'
+    });
+    $('#answer').val('');
+    $('#get-question').removeClass('hide').addClass('show');
+    $('#question').removeClass('show').addClass('hide');
+  });
+
 	Array.prototype.shuffle = function(){
 		let counter = this.length, temp, index;
 		while (counter > 0) {
