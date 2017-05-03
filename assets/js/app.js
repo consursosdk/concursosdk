@@ -2,24 +2,24 @@ $(document).ready(function(){
 	let answer = '';
 	let questions = [
 		{
-			question: '¿Cual es la distancia de la tierra a la lunaa?',
-			answer: 'no se'
+			question: 'Dinos el nombre de un speaker',
+			answer: 'Enrique Zamudio Veronica Lopez Jeduan Cornejo Norberto Ortigoza David Sanders Mario Garcia'
 		},
 		{
-			question: '',
-			answer: ''
+			question: 'Menciona nombre de una persona que trabaja en michelada',
+			answer: 'Alexis Navarro David Padilla Ana Molina Angel Baltazar Edmundo Eduardo Mota Gilberto Hector rojo Herman Isay Jaime Jimmy Jesus Jhonathan Joanatan Garay george Jorge Pardiñas Lenin Mario Chavez Noel Escobedo Elsa Fernando Barajas'
 		},
 		{
-			question: '',
-			answer: ''
+			question: 'Di un lenguaje que se va a presentar',
+			answer: 'Java Go JavaScript Elixir Julia Phyton'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '¿Dónde es es el evento?',
+			answer: 'museo regional de historia'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '¿Cuándo es el evento?',
+			answer: '12 de mayo 12/05/17 12/05/2017'
 		}
 	];
 
@@ -27,30 +27,32 @@ $(document).ready(function(){
 		$('#question').slideDown();
     const selectedQuestion = questions[Math.floor(Math.random() * questions.length)];
 		$('#question h2').text(selectedQuestion.question);
-		answer = selectedQuestion.answer;
+		answer = selectedQuestion.answer.toLowerCase();
 		$(this).slideUp();
 	});
 
 	$('form').on('submit', function(ev) {
 		ev.preventDefault();
-		var userAnswer = $('#answer').val();
-		if (userAnswer.toLowerCase() == answer) {
+		const userAnswer = $('#answer').val().toLowerCase();
+		if (answer.includes(userAnswer)) {
 			$('.overlay').css({
 				display: 'block'
 			});
 		}
 	});
 
-	var users = [],
-	shuffled = [],
+	let users = [
+    "Perdedor",
+    "Perdiste",
+    "Nop",
+    "Casi",
+    "Ganador"
+	];
+	let shuffled = [],
 	loadout = $("#loadout"),
 	insert_times = 30,
 	duration_time = 10000;
 	$("#roll").click(function(){
-		users = [
-			"Perdedor",
-			"Ganador"
-		];
 
 		$("#roll").attr("disabled",true);
 		let scrollsize = 0,
@@ -79,7 +81,7 @@ $(document).ready(function(){
 			left: "-="+diff
 		},  duration_time, function() {
 			$('#loadout').children('td').each(function () {
-				var center = window.innerWidth / 2;
+				let center = window.innerWidth / 2;
 				if($(this).offset().left < center && $(this).offset().left + 185 > center){
 					const text = $(this).children().text();
 					if (text == "Ganador") {
@@ -94,7 +96,7 @@ $(document).ready(function(){
 	});
 
 	Array.prototype.shuffle = function(){
-		var counter = this.length, temp, index;
+		let counter = this.length, temp, index;
 		while (counter > 0) {
 			index = (Math.random() * counter--) | 0;
 			temp = this[counter];
@@ -103,8 +105,7 @@ $(document).ready(function(){
 		}
 	}
 
-	function randomEx(min,max)
-	{
+	function randomEx(min,max) {
 		return Math.floor(Math.random()*(max-min+1)+min);
 	}
 });
