@@ -1,9 +1,9 @@
 $(document).ready(function(){
   console.log('HOLA DADDY!');
-	let answerSelected = '';
-  const tada = new Audio('assets/sounds/tada.wav');
-  const wrong = new Audio('assets/sounds/wrong.wav');
-	let questions = [
+	var answerSelected = '';
+  var tada = new Audio('assets/sounds/tada.wav');
+  var wrong = new Audio('assets/sounds/wrong.wav');
+	var questions = [
 		{
 			question: 'Dinos el nombre de un speaker',
 			answer: 'Enrique Zamudio Veronica Lopez Jeduan Cornejo Norberto Ortigoza David Sanders Mario Garcia'
@@ -28,7 +28,7 @@ $(document).ready(function(){
 
 	$('#get-question').on('tap click', function() {
     $('#question').removeClass('hide').addClass('show');
-    const selectedQuestion = questions[Math.floor(Math.random() * questions.length)];
+    var selectedQuestion = questions[Math.floor(Math.random() * questions.length)];
 		$('#question h2').text(selectedQuestion.question);
 		answerSelected = selectedQuestion.answer.toLowerCase();
 		$(this).addClass('hide').removeClass('show');
@@ -36,7 +36,7 @@ $(document).ready(function(){
 
 	$('form').on('submit', function(ev) {
 		ev.preventDefault();
-		const userAnswer = $('#answer').val().toLowerCase();
+		var userAnswer = $('#answer').val().toLowerCase();
     if(userAnswer.length > 1 && answerSelected.includes(userAnswer)) {
       $('.overlay').css({
         display: 'block'
@@ -47,7 +47,7 @@ $(document).ready(function(){
 
 	});
 
-	let users = [
+	var users = [
     "Perdedor <i class='fa fa-frown-o'></i>",
     "Perdiste <i class='fa fa-frown-o'></i>",
     "Nop <i class='fa fa-frown-o'></i>",
@@ -56,14 +56,14 @@ $(document).ready(function(){
     "Casi <i class='fa fa-frown-o'></i>",
     "Ganador"
 	];
-	let shuffled = [],
+	var shuffled = [],
 	loadout = $("#loadout"),
 	insert_times = 30,
 	duration_time = 10000;
 	$("#roll").on('click tap', function(){
 
 		$("#roll").attr("disabled",true);
-		let scrollsize = 0,
+		var scrollsize = 0,
 		diff = 0;
 		$(loadout).html("");
 		loadout.css("left","100%");
@@ -74,7 +74,7 @@ $(document).ready(function(){
 			insert_times = 10;
 			duration_time = 10000;
 		}
-		for(let times = 0; times < insert_times; times++){
+		for(var times = 0; times < insert_times; times++){
 			users.shuffle();
       users.forEach(shuffled => {
         loadout.append('<td><div class="roller"><div>'+shuffled+'</div></div></td>');
@@ -89,9 +89,9 @@ $(document).ready(function(){
 			left: "-="+diff
 		},  duration_time, function() {
 			$('#loadout').children('td').each(function () {
-				let center = window.innerWidth / 2;
+				var center = window.innerWidth / 2;
 				if($(this).offset().left < center && $(this).offset().left + 185 > center){
-					const text = $(this).children().text();
+					var text = $(this).children().text();
 					if (text == "Ganador") {
 						$('#winner-animation').show();
             tada.play();
@@ -118,7 +118,7 @@ $(document).ready(function(){
   });
 
 	Array.prototype.shuffle = function(){
-		let counter = this.length, temp, index;
+		var counter = this.length, temp, index;
 		while (counter > 0) {
 			index = (Math.random() * counter--) | 0;
 			temp = this[counter];
