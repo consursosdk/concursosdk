@@ -102,6 +102,8 @@ $(document).ready(function(){
     $('#answer').val('');
     $('#get-question').removeClass('hide').addClass('show');
     $('#question').removeClass('show').addClass('hide');
+    $('#loadout').empty();
+    $("#roll").attr("disabled", false);
   });
 
 	Array.prototype.shuffle = function(){
