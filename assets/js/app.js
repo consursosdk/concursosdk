@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  console.log('HOLA DADDY!');
 	let answer = '';
   const tada = new Audio('assets/sounds/tada.wav');
   const wrong = new Audio('assets/sounds/wrong.wav');
