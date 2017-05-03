@@ -1,6 +1,6 @@
 $(document).ready(function(){
   console.log('HOLA DADDY!');
-	let answer = '';
+	let answerSelected = '';
   const tada = new Audio('assets/sounds/tada.wav');
   const wrong = new Audio('assets/sounds/wrong.wav');
 	let questions = [
@@ -30,14 +30,14 @@ $(document).ready(function(){
     $('#question').removeClass('hide').addClass('show');
     const selectedQuestion = questions[Math.floor(Math.random() * questions.length)];
 		$('#question h2').text(selectedQuestion.question);
-		answer = selectedQuestion.answer.toLowerCase();
+		answerSelected = selectedQuestion.answer.toLowerCase();
 		$(this).addClass('hide').removeClass('show');
 	});
 
 	$('form').on('submit', function(ev) {
 		ev.preventDefault();
 		const userAnswer = $('#answer').val().toLowerCase();
-    if(userAnswer.length > 1 && answer.includes(userAnswer)) {
+    if(userAnswer.length > 1 && answerSelected.includes(userAnswer)) {
       $('.overlay').css({
         display: 'block'
       });
