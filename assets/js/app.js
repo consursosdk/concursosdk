@@ -36,7 +36,7 @@ $(document).ready(function(){
 	$('form').on('submit', function(ev) {
 		ev.preventDefault();
 		const userAnswer = $('#answer').val().toLowerCase();
-    if(userAnswer.length > 2 && answer.includes(userAnswer)) {
+    if(userAnswer.length > 1 && answer.includes(userAnswer)) {
       $('.overlay').css({
         display: 'block'
       });
@@ -92,8 +92,8 @@ $(document).ready(function(){
 				if($(this).offset().left < center && $(this).offset().left + 185 > center){
 					const text = $(this).children().text();
 					if (text == "Ganador") {
-            tada.play();
 						$('#winner-animation').show();
+            tada.play();
 						$('#roll').hide();
 						$('.rollbox').hide();
 					} else {
