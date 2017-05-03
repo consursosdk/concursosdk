@@ -64,8 +64,25 @@ h1 {
 	flex-direction: column;
 }
 
-.question {
+.hide {
+	opacity: 0;
+	max-height: 0;
+	/*display: none;*/
+}
+
+.boton.hide {
+	opacity: 0;
+	max-height: 0;
 	display: none;
+}
+
+.show {
+	opacity: 1;
+	height: auto;
+}
+
+.animaton-out {
+	transition: all 1s ease-in-out;
 }
 
 .answer {
@@ -97,7 +114,7 @@ h1 {
 	height:200px;
 	margin:0;
 	padding:0;
-	
+
 }
 #loadout{
 	position:absolute;
@@ -126,7 +143,7 @@ h1 {
 	bottom:0;
 	width:100%;
 	left:0;
-	
+
 }
 .inputbox{
 	background:#212121;
@@ -149,14 +166,14 @@ h1 {
 	background:#FFCE0A;
 	opacity:0.6;
 	z-index:2;
-	
+
 }
 #log{
 	margin-top:30px;
 	text-align:center;
 	font-size:1.5em;
 	color:white;
-	
+
 }
 #log span{
 	font-size:2em;

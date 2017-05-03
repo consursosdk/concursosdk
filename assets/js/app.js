@@ -24,11 +24,11 @@ $(document).ready(function(){
 	];
 
 	$('#get-question').on('click', function() {
-		$('#question').slideDown();
+    $('#question').removeClass('hide').addClass('show');
     const selectedQuestion = questions[Math.floor(Math.random() * questions.length)];
 		$('#question h2').text(selectedQuestion.question);
 		answer = selectedQuestion.answer.toLowerCase();
-		$(this).slideUp();
+		$(this).addClass('hide').removeClass('show');
 	});
 
 	$('form').on('submit', function(ev) {
