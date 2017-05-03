@@ -76,7 +76,7 @@ $(document).ready(function(){
 		}
 		for(var times = 0; times < insert_times; times++){
 			users.shuffle();
-      users.forEach(shuffled => {
+      users.forEach(function(shuffled) {
         loadout.append('<td><div class="roller"><div>'+shuffled+'</div></div></td>');
 				scrollsize += 192;
       });
