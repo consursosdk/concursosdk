@@ -131,14 +131,14 @@ h1 {
 	text-align:center;
 	color:white;
 	line-height:180px;
-	font-size:0.8em;
+	font-size:1.6em;
 	font-weight:bold;
 	font-family:sans-serif;
 }
 .roller div{
 	display:block;
-	height:50px;
-	line-height:50px;
+	/* height:50px;
+	line-height:50px; */
 	position:absolute;
 	bottom:0;
 	width:100%;

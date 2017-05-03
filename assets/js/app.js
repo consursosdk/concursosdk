@@ -42,10 +42,10 @@ $(document).ready(function(){
 	});
 
 	let users = [
-    "Perdedor",
-    "Perdiste",
-    "Nop",
-    "Casi",
+    "Perdedor <i class='fa fa-frown-o'></i>",
+    "Perdiste <i class='fa fa-frown-o'></i>",
+    "Nop <i class='fa fa-frown-o'></i>",
+    "Casi <i class='fa fa-frown-o'></i>",
     "Ganador"
 	];
 	let shuffled = [],
