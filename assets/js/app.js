@@ -50,9 +50,7 @@ $(document).ready(function(){
     "Perdedor <i class='fa fa-frown-o'></i>",
     "Perdiste <i class='fa fa-frown-o'></i>",
     "Nop <i class='fa fa-frown-o'></i>",
-    "Casi <i class='fa fa-frown-o'></i>",
     "No ganaste <i class='fa fa-frown-o'></i>",
-    "Casi <i class='fa fa-frown-o'></i>",
     "Ganador"
 	];
 	var shuffled = [],
