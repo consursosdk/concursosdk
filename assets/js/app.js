@@ -113,6 +113,8 @@ $(document).ready(function(){
     $('#question').removeClass('show').addClass('hide');
     $('#loadout').empty();
     $("#roll").attr("disabled", false);
+    $('#roll').show();
+    $('.rollbox').show();
   });
 
 	Array.prototype.shuffle = function(){
