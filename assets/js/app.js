@@ -5,7 +5,7 @@ $(document).ready(function(){
 	var questions = [
 		{
 			question: 'Dinos el nombre de un speaker',
-			answer: 'Enrique Zamudio Veronica Lopez Jeduan Cornejo Norberto Ortigoza David Sanders Mario Garcia'
+			answer: 'Enrique Zamudio Veronica Lopez Jeduan Cornejo Norberto Ortigoza David Sanders Mario Garcia chocho'
 		},
 		{
 			question: 'Menciona nombre de una persona que trabaja en michelada',
@@ -17,7 +17,7 @@ $(document).ready(function(){
 		},
 		{
 			question: '¿Dónde es es el evento?',
-			answer: 'museo regional de historia'
+			answer: 'museo regional de historia colima'
 		},
 		{
 			question: '¿Cuándo es el evento?',
