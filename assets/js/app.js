@@ -109,6 +109,7 @@ $(document).ready(function(){
     $('.overlay').css({
       display: 'none'
     });
+    $('#winner-animation').hide();
     $('#answer').val('');
     $('#get-question').removeClass('hide').addClass('show');
     $('#question').removeClass('show').addClass('hide');
